@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <movie>
+            <hellopage>
+                <field>1</field>
+                <header_title>I’m a text field</header_title>
+                <custom_select_field>1</custom_select_field>
+                <!--<button>Reload Page</button>-->
+            </hellopage>
+        </movie>
+    </default>
+</config>

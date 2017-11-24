@@ -1,0 +1,36 @@
+<h2>Actor</h2>
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$storeManager = $objectManager->create('\Magenest\Movie\Model\MagenestActor');
+$result = $block->getById();
+?>
+<form action="<?php echo $block->getUrl('magenestmovie/actor/save') ?>" class="form-inline" method="post"
+      enctype="multipart/form-data" novalidate>
+    <input type="hidden" name="id" id="id" value="<?php echo $result['actor_id'] ?>">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" autofocus="" class="form-control col-md-5" id="name"
+               data-validate="{required:true}" value="<?php echo $result['name'] ?>">
+    </div>
+
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-xs btn-success">
+            <i class="fa fa-save"></i> Save
+        </button>
+        <a href="<?php echo $block->getUrl('magenestmovie/index/actor') ?>" class="btn btn-xs btn-danger">
+            <i class="fa fa-remove"></i> Cancel
+        </a>
+    </div>
+</form>
+
+<script type="text/javascript">
+    require([
+        'jquery',
+        'mage/mage'
+    ], function ($) {
+
+        var dataForm = $('.form-inline');
+        dataForm.mage('validation', {});
+
+    });
+</script>

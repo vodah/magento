@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <!--<add id="Magenest_Test::test" title="Magenest" module="Magenest_Test" sortOrder="50"-->
+        <!--resource="Magenest_Test::test"/>-->
+        <!--<add id="Magenest_Test::grid" title="Grid" module="Magenest_Test" sortOrder="20" parent="Magenest_Test::test"-->
+        <!--action="test/grid" resource="Magenest_Test::grid"/>-->
+    </menu>
+</config>

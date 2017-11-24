@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      layout="2columns-left"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Magenest Movie</title>
+        <!--<script src="Magenest_Movie::js/custom.js"/>-->
+    </head>
+    <body>
+
+        <remove name="wishlist_sidebar"/>
+        <referenceContainer name="content">
+            <block class="Magenest\Movie\Block\MagenestMovie" name="magenest_movie"
+                   template="Magenest_Movie::magenestmovie.phtml" cacheable="false"/>
+        </referenceContainer>
+    </body>
+</page>

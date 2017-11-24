@@ -1,0 +1,35 @@
+<h2>Magenest Actor</h2>
+<?php
+/**
+ * @var $block Magenest\Movie\Block\MagenestMovie
+ */
+$collection = $block->getActor();
+//var_dump($collection);
+//die();
+?>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th><a href="<?php echo $block->getUrl('magenestmovie/actor/addnew'); ?>">
+                <button>Add New</button>
+            </a>
+
+        </th>
+
+    </tr>
+    <?php foreach ($collection as $item) { ?>
+        <tr>
+            <td><?php echo $item['actor_id'] ?></td>
+            <td><?php echo $item['name'] ?></td>
+            <td>
+                <a href="<?php echo $block->getUrl('magenestmovie/actor/edit',['id'=> $item['actor_id']])?>">Update</a>
+                <a href="<?php echo $block->getUrl('magenestmovie/actor/remove',['id'=> $item['actor_id']])?>">&af;&nbsp; Delete</a>
+            </td>
+        </tr>
+        <?php
+    }
+
+    ?>
+</table>

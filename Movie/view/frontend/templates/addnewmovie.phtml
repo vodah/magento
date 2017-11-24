@@ -1,0 +1,53 @@
+<!--<h2>Add New Movie</h2>-->
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$storeManager = $objectManager->create('\Magenest\Movie\Model\AddNewMovie');
+$result = $block->getById();
+
+//die();
+
+?>
+<form action="<?php echo $block->getUrl('magenestmovie/movie/save'); ?>" class="form-inline" method="post"
+      enctype="multipart/form-data" novalidate>
+    <input type="hidden" name="id" id="id" value="<?php echo $result['movie_id'] ?>">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" autofocus="" data-validate="{required:true}" class="form-control col-md-5"
+               id="name" value="<?php echo $result['name'] ?>">
+    </div>
+    <div class="form-group">
+        <label for="description">description:</label>
+        <input type="text" name="description" class="form-control" data-validate="{required:true}" id="description"
+               value="<?php echo $result['description'] ?>">
+    </div>
+    <div class="form-group">
+        <label for="rating">rating:</label>
+        <input type="text" name="rating" data-validate="{required:true, 'validate-number':true}" class="form-control"
+               id="rating" value="<?php echo $result['rating'] ?>">
+    </div>
+    <div class="form-group">
+        <label for="director_id">director_id:</label>
+        <input type="text" name="director_id" data-validate="{required:true, 'validate-number':true}"
+               class="form-control" id="director_id" value="<?php echo $result['director_id'] ?>">
+    </div>
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-xs btn-success">
+            <i class="fa fa-save"></i> Save
+        </button>
+        <a href="<?php echo $block->getUrl('magenestmovie') ?>" class="btn btn-xs btn-danger">
+            <i class="fa fa-remove"></i> Cancel
+        </a>
+    </div>
+</form>
+
+<script type="text/javascript">
+    require([
+        'jquery',
+        'mage/mage'
+    ], function ($) {
+
+        var dataForm = $('.form-inline');
+        dataForm.mage('validation', {});
+
+    });
+</script>

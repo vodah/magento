@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <!--grid-->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="magenest_movie_listing_data_source" xsi:type="string">Magenest\Ui\Model\ResourceModel\Movie\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!--customer-->
+    <virtualType name="Magenest\Ui\Model\ResourceModel\Movie\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magenest_movie</argument>
+            <argument name="resourceModel" xsi:type="string">Magenest\Ui\Model\ResourceModel\Movie</argument>
+        </arguments>
+    </virtualType>
+    <!--end customer-->
+</config>

@@ -1,0 +1,49 @@
+<h2>Magenest Movie</h2>
+<?php
+/**
+ * @var $block Magenest\Movie\Block\MagenestMovie
+ */
+$collection = $block->getMovies();
+//var_dump($collection);
+?>
+<a href="<?php echo $block->getUrl('magenestmovie/movie/addnew'); ?>">
+    <button class="btn-danger">Add New</button>
+</a>
+
+
+<table>
+
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Rating</th>
+        <th>Director_ID</th>
+        <th>
+
+        </th>
+    </tr>
+    <?php foreach ($collection as $item) { ?>
+        <tr>
+            <td><?php echo $item['movie_id'] ?></td>
+            <td><?php echo $item['name'] ?></td>
+            <td><?php echo $item['description'] ?></td>
+            <td><?php echo $item['rating'] ?></td>
+            <td><?php echo $item['director_id'] ?></td>
+            <td>
+                <a href="<?php echo $block->getUrl('magenestmovie/movie/edit', ['id' => $item['movie_id']]); ?>"
+                   class=" col-md-2 btn btn-info btn-xs">
+                    <i class="fa fa-pencil"></i> Update
+                </a>
+                <a href="<?php echo $block->getUrl('magenestmovie/movie/remove', ['id' => $item['movie_id']]); ?>"
+                   class="col-md-2 btn btn-danger btn-xs">
+                    <i class="fa fa-remove"></i>&af; &nbsp; Delete
+                </a>
+            </td>
+
+        </tr>
+        <?php
+    }
+
+    ?>
+</table>
